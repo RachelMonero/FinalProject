@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/savedItem"
+        android:icon="@drawable/like"
+        android:orderInCategory="50"
+        android:title="@string/saveditems"
+        app:showAsAction="always"/>
+
+
+    <item
+        android:id="@+id/pickDate"
+        android:icon="@drawable/calendar4"
+        android:orderInCategory="80"
+        android:title="@string/calendar"
+        app:showAsAction="always" />
+
+
+</menu>

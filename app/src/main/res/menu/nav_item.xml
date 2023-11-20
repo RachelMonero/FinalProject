@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Home"
+        app:showAsAction="ifRoom"/>
+
+
+    <item
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Help"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Exit"
+        app:showAsAction="ifRoom"/>
+
+</menu>

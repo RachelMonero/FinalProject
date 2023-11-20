@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Final Project ver 1.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="title_activity_testing_mavogation_delete" tools:keep="@string/title_activity_testing_mavogation_delete">TestingMavogationDelete</string>
+    <string name="navigation_drawer_open" tools:keep="@string/navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close" tools:keep="@string/navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="home">Home</string>
+    <string name="exit">Exit</string>
+    <string name="calendar">Calendar</string>
+    <string name="saveditems">Saved Items</string>
+    <string name="help">Help</string>
+
+    <!-- AlertDialog message -->
+    <string name="help_title">How to use:</string>
+    <string name="help_context1">
+        \n
+        - If you\'d like to discover images from \n
+        a specific date, click the calendar icon \n
+        in the toolbar and choose that date.\n \n
+        - Click on the provided link on the page \n
+        to view the image.\n \n
+        - Save the image for future reference.\n \n
+        -To revisit all saved items, \n
+        click the heart icon in the toolbar.\n
+
+
+    </string>
+    <string name="ok">OK</string>
+    <string name="guide">* Click the Hdurl link to see Clear Picture.*</string>
+    <string name="date">Date:</string>
+    <string name="url">Url:</string>
+    <string name="hdurl">Hdurl:</string>
+    <string name="please_set_a_title">Please set a title.</string>
+    <string name="save">Save</string>
+    <string name="save_comment">* If you wish to save it, set its title and click \'Save\' button.</string>
+    <string name="refresh">Refresh</string>
+    <string name="saved_image_links">Saved Image Links</string>
+    <string name="title">Title:</string>
+    <string name="picture_of_day">The Picture of Day</string>
+
+
+</resources>

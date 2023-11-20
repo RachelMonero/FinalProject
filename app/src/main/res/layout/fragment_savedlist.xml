@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <TextView
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:text="@string/saved_image_links"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:paddingLeft="100dp"
+        android:paddingTop="10dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSavedList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:padding="8dp" />
+
+
+</LinearLayout>
