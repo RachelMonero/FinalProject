@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Final Project ver 1.0</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="title_activity_testing_mavogation_delete" tools:keep="@string/title_activity_testing_mavogation_delete">TestingMavogationDelete</string>
+    <string name="navigation_drawer_open" tools:keep="@string/navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close" tools:keep="@string/navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="home">Maison</string>
+    <string name="exit">Sortie</string>
+    <string name="calendar">Calendrier</string>
+    <string name="saveditems">Éléments enregistrés</string>
+    <string name="help">Aide</string>
+
+    <!-- AlertDialog message -->
+    <string name="help_title">Comment utiliser:</string>
+    <string name="help_context1">
+        \n
+        - Si vous souhaitez découvrir des \n
+        images d\'une date spécifique, cliquez \n
+        sur l\'icône du calendrier dans la barre \n
+        d\'outils et choisissez cette date. \n\n
+        - Cliquez sur le lien fourni sur \n
+        la page pour voir l\'image. \n\n
+        - Enregistrez l\'image pour \n
+        référence future. \n\n
+        - Pour revoir tous les éléments \n
+        enregistrés, cliquez sur l\'icône \n
+        en forme de cœur dans la barre d\'outils.
+        \n
+
+    </string>
+    <string name="ok">D\'ACCORD</string>
+    <string name="guide">* Cliquez sur le lien Hdurl pour voir Clear Picture.*</string>
+    <string name="date">Date:</string>
+    <string name="url">Url:</string>
+    <string name="hdurl">Hdurl:</string>
+    <string name="please_set_a_title">Veuillez définir un titre.</string>
+    <string name="save">Sauvegarder</string>
+    <string name="save_comment">* Si vous souhaitez le sauvegarder, définissez son titre et cliquez sur le bouton \'Enregistrer\'.</string>
+    <string name="refresh">Rafraîchir</string>
+    <string name="saved_image_links">Liens vers les images enregistrées</string>
+    <string name="title">Titre:</string>
+    <string name="picture_of_day">L\'image du jour</string>
+
+
+</resources>
