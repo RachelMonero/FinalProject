@@ -8,8 +8,12 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
-
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
     <TextView
         android:id="@+id/title_date"
         android:layout_width="50dp"
@@ -24,8 +28,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:paddingTop="5dp"
         android:layout_toEndOf="@id/title_date" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/one"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
     <TextView
         android:id="@+id/title_data_url"
         android:layout_width="50dp"
@@ -35,6 +48,8 @@
         android:layout_marginTop="5dp"
         android:text="@string/url"
         android:textStyle="bold" />
+
+
     <TextView
         android:id="@+id/content_data_url"
         android:layout_width="match_parent"
@@ -42,7 +57,14 @@
         android:layout_below="@id/content_date"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/title_data_url" />
-
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/two"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
     <TextView
         android:id="@+id/title_hdurl"
         android:layout_width="50dp"
@@ -60,15 +82,16 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/title_hdurl" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/content_hdurl"
+        android:layout_below="@id/three"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="10dp"
-        android:textColor="#421D20"
+        android:textColor="#C14B25"
         android:text="@string/guide"/>
 
     <ProgressBar
@@ -85,7 +108,7 @@
         android:id="@+id/content_imageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_below="@id/content_hdurl"
+        android:layout_below="@id/guide"
         android:layout_marginTop="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
