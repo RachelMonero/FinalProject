@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#97B8BC"
+        android:background="#82BAC1"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.AppCompat.Light" />
@@ -44,9 +44,11 @@
                 android:text="@string/picture_of_day"/>
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="20dp"
+                android:textColor="@color/white"
                 android:text="@string/refresh"
+                android:textStyle="bold"
                 android:id="@+id/refreshButton"/>
 
         </LinearLayout>

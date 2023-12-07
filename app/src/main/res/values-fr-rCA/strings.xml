@@ -45,5 +45,8 @@
     <string name="title">Titre:</string>
     <string name="picture_of_day">L\'image du jour</string>
 
+    <string name="name">Nom:</string>
+    <string name="contents">Contenu:</string>
+
 
 </resources>

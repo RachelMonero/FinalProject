@@ -43,6 +43,9 @@
     <string name="saved_image_links">Saved Image Links</string>
     <string name="title">Title:</string>
     <string name="picture_of_day">The Picture of Day</string>
+    <string name="image_title">Title:</string>
+    <string name="name">Name:</string>
+    <string name="contents">Contents:</string>
 
 
 </resources>

@@ -7,10 +7,11 @@
     <TextView
         android:layout_height="40dp"
         android:layout_width="match_parent"
+        android:background="#EAEAEA"
         android:text="@string/saved_image_links"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:paddingLeft="100dp"
+        android:paddingLeft="8dp"
         android:paddingTop="10dp"
         />
 

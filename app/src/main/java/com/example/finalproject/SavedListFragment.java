@@ -7,9 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
+
+import androidx.appcompat.app.WindowDecorActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +58,7 @@ public class SavedListFragment extends Fragment {
 
         savedListAdapter =  new SavedListAdapter(savedItemList);
         recyclerView.setAdapter(savedListAdapter);
+        Log.d("view", String.valueOf(view));
 
         return view;
     }
@@ -66,12 +71,14 @@ public class SavedListFragment extends Fragment {
             return savedItemList;
         }
 
-        String[] columns = {DBManager.COL_TITLE, DBManager.COL_DATE, DBManager.COL_URL, DBManager.COL_HDURL};
+        String[] columns = {DBManager.COL_TITLE, DBManager.COL_DATE, DBManager.COL_URL, DBManager.COL_HDURL,DBManager.COL_IMG_NAME};
         Cursor cursor = db.query(DBManager.TABLE_NAME, columns, null, null, null, null, null);
         int titleColumnIndex = cursor.getColumnIndex(DBManager.COL_TITLE);
         int dateColumnIndex = cursor.getColumnIndex(DBManager.COL_DATE);
         int dataUrlColumnIndex = cursor.getColumnIndex(DBManager.COL_URL);
         int hdurlColumnIndex = cursor.getColumnIndex(DBManager.COL_HDURL);
+        int imageNameColumnIndex = cursor.getColumnIndex(DBManager.COL_IMG_NAME);
+
 
         while (cursor.moveToNext()) {
             String title;
@@ -85,8 +92,13 @@ public class SavedListFragment extends Fragment {
             String date = cursor.getString(dateColumnIndex);
             String dataUrl =cursor.getString(dataUrlColumnIndex);
             String hdurl = cursor.getString(hdurlColumnIndex);
+            String imageName = cursor.getString(imageNameColumnIndex);
+
+
+
 
             MainActivity.DateImageLink savedItem = new MainActivity.DateImageLink(title,date, dataUrl, hdurl);
+            savedItem.setImageTitle(imageName);
             savedItem.setIsSaved(true);
             savedItemList.add(savedItem);
         }
@@ -124,6 +136,7 @@ public class SavedListFragment extends Fragment {
             holder.dateTextView.setText(dateImageLinkItem.getDate());
             holder.urlTextView.setText(dateImageLinkItem.getDataUrl());
             holder.hdurlTextView.setText(dateImageLinkItem.getHdurl());
+            holder.imageNameTextView.setText(dateImageLinkItem.getImageTitle());
             Glide.with(requireContext()).load(dateImageLinkItem.getDataUrl()).into(holder.savedImageView);
 
             holder.itemView.setOnClickListener(v -> {
@@ -143,8 +156,8 @@ public class SavedListFragment extends Fragment {
             public TextView dateTextView;
             public TextView urlTextView;
             public TextView hdurlTextView;
-
             public ImageView savedImageView;
+            public TextView imageNameTextView;
 
             public ViewHolder(View view) {
                 super(view);
@@ -153,7 +166,7 @@ public class SavedListFragment extends Fragment {
                 urlTextView = view.findViewById(R.id.item_url);
                 hdurlTextView = view.findViewById(R.id.item_hdurl);
                 savedImageView= view.findViewById(R.id.item_imageView);
-
+                imageNameTextView = view.findViewById(R.id.item_imageName);
             }
         }
         private void showAlertDialog(MainActivity.DateImageLink dateImageLinkItem) {

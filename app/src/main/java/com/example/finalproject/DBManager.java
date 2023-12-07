@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 public class DBManager extends SQLiteOpenHelper {
+
     private static DBManager dbManager;
     private static  String DATABASE_NAME = "savedListDB";
     private static  int VERSION = 1;
@@ -14,6 +15,9 @@ public class DBManager extends SQLiteOpenHelper {
     public final static String COL_DATE = "Date";
     public final static String COL_URL = "Url";
     public final static String COL_HDURL = "Hdurl";
+    public final static String  COL_IMG_NAME = "ImageName";
+
+
 
 
     public DBManager(Context ctx){
@@ -27,7 +31,7 @@ public class DBManager extends SQLiteOpenHelper {
 
         return dbManager;
     }
-    //Creation of Database Connection
+    //Creation of Database
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableQuery = "CREATE TABLE " + TABLE_NAME + " ( " +
@@ -35,10 +39,13 @@ public class DBManager extends SQLiteOpenHelper {
                 COL_TITLE + " TEXT, " +
                 COL_DATE + " TEXT, " +
                 COL_URL + " TEXT, " +
-                COL_HDURL + " TEXT )";
+                COL_HDURL + " TEXT, " +
+                COL_IMG_NAME + " TEXT )";
+
         db.execSQL(createTableQuery);
         Log.d("DBManager", "Database table has created, successfully");
     }
+    //Upgrade Database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 

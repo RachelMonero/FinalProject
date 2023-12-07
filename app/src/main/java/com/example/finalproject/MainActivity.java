@@ -62,14 +62,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private String dataUrl;
         private String hdurl;
         private String title;
+        private String imageTitle;
         private boolean isSaved;
 
-
+        //Initiating DataImageLink
         public DateImageLink(String title, String date, String dataUrl, String hdurl){
             this.date = date;
             this.dataUrl = dataUrl;
             this.hdurl=hdurl;
             this.title= title;
+            this.imageTitle = imageTitle;
             this.isSaved =false;
         }
 
@@ -102,6 +104,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             this.title = title;
         }
+        public String getImageTitle() {
+
+            return imageTitle;
+        }
+        public void setImageTitle(String imageTitle){
+
+            this.imageTitle = imageTitle;
+        }
+
     }
 
     @Override
@@ -153,6 +164,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 dataToPass.putString("date", selectedDateImageLink.getDate());
                 dataToPass.putString("dataUrl", selectedDateImageLink.getDataUrl());
                 dataToPass.putString("hdurl", selectedDateImageLink.getHdurl());
+                dataToPass.putString("imageTitle", selectedDateImageLink.getImageTitle());
+
                 detailsListViewFragment.setArguments(dataToPass);
 
                 getSupportFragmentManager()
@@ -205,14 +218,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 JSONObject jsonObject = new JSONObject(result);
 
-                //Parse JSON data to extract information of date,url,hdurl
+                //Parse JSON data to extract information of date,url,hdurl,title
                 String date = jsonObject.getString("date");
                 String dataUrl = jsonObject.getString("url");
                 String hdurl = jsonObject.getString("hdurl");
+                String imageTitle = jsonObject.getString("title");
+
 
                 //Create dateImageLinkObject that contains extracted information
                 DateImageLink dateImageLinkObject = new DateImageLink(null,date, dataUrl, hdurl);
                 dateImageLinkObject.setTitle(null);
+                dateImageLinkObject.setImageTitle(imageTitle);
 
                 //Create a list that contains DataImageLinkObject
                 List<DateImageLink> dateImageLinkListSet = new ArrayList<>();
@@ -340,6 +356,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
+
+            //Set Source Address to Selected Date.
             selectedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month + 1, day);
             newSourceAddress ="https://api.nasa.gov/planetary/apod?api_key=MShM4oqqqOsNJQd44h7M4S0WMXEEDOWFCXUUvgpj&date="+selectedDate;
 
