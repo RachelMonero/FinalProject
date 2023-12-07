@@ -3,7 +3,9 @@ package com.example.finalproject;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -144,6 +146,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this, MainActivity.class));
             finish();
         });
+
+        VisitCount.countVisitPlusOne(this);
+        int count = VisitCount.getVisitCount(this);
+        String message = "visit: "+count;
+
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+
+
+
 
         //HTTP request to fetch data from NASA
         MyHTTPRequest req = new MyHTTPRequest();
@@ -410,5 +421,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
         drawer.closeDrawers();
     }
+
 
 }
